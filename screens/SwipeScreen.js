@@ -1,21 +1,49 @@
-import React from 'react';
-import {View, Text, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context'
+import React from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
+import Swiper from 'react-native-deck-swiper'
+import { Card } from '../components/Card'
+import shuffleArray from '../helpers/shuffleArray'
 
-export default function SwipeScreen() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View>
-          <Text>Swiping</Text>
-      </View>
-    </SafeAreaView>
-  );
+export const HomeScreenPics = shuffleArray([
+  {
+    pic: require('../assets/test/1.jpg'),
+    title: 'Amelia, 27',
+    caption: '16 miles away',
+  },
+  {
+    pic: require('../assets/test/2.jpg'),
+    title: 'Joanna, 19',
+    caption: '2 miles away',
+  },
+  {
+    pic: require('../assets/test/3.jpg'),
+    title: 'Charlie, 32',
+    caption: '24 miles away',
+  },
+]);
+
+class SwipeScreen extends React.Component {
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Swiper
+          cards={HomeScreenPics}
+          renderCard={Card}
+          infinite
+          backgroundColor="white"
+          cardHorizontalMargin={0}
+          stackSize={2}
+        />
+      </SafeAreaView>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-      height: '100%',
-      backgroundColor: 'rgba(249,249,249,1)',
-      paddingHorizontal: 34,
-    }
-});
+  container: {
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
+})
+
+export default SwipeScreen

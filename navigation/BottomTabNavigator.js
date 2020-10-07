@@ -5,6 +5,7 @@ import * as React from 'react';
 
 import Home from '../screens/HomeScreen';
 import Friends from '../screens/FriendsScreen';
+import Swipe from '../screens/SwipeScreen';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -39,7 +40,18 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="Home"
         component={Home}
-        options={{headerTitle: 'Home'}}
+        options={{
+          headerShown: false,
+          animationEnabled: false
+        }}
+      />
+      <HomeStack.Screen
+        name="Swipe"
+        component={Swipe}
+        options={{
+          headerShown: false,
+          animationEnabled: false
+        }}
       />
     </HomeStack.Navigator>
   );
@@ -52,7 +64,10 @@ function FriendsNavigator() {
       <FriendsStack.Screen
         name="Friends"
         component={Friends}
-        options={{headerTitle: 'Friends'}}
+        options={{
+          headerShown: false,
+          animationEnabled: false
+        }}
       />
     </FriendsStack.Navigator>
   );
