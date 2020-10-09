@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-restaurantswiper-dev-10238-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349285540291:role/amplify-restaurantswiper-dev-10238-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349285540291:role/amplify-restaurantswiper-dev-10238-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-restaurantswiper-dev-10238-deployment",
+      "UnauthRoleName": "amplify-restaurantswiper-dev-10238-unauthRole",
+      "StackName": "amplify-restaurantswiper-dev-10238",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:349285540291:stack/amplify-restaurantswiper-dev-10238/141e79c0-0a38-11eb-9f10-02345eb04454",
+      "AmplifyAppId": "d305c91y89pzf2"
+    }
+  }
+}
