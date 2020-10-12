@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "restaurantswiper31087dda": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
