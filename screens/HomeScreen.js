@@ -6,7 +6,6 @@ export default function HomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-          <Text>Home</Text>
           <Pressable
             onPress={() => {
               navigation.navigate('Swipe')

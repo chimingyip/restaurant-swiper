@@ -1,33 +1,40 @@
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons, MaterialIcons, Entypo} from '@expo/vector-icons';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Home from '../screens/HomeScreen';
 import Friends from '../screens/FriendsScreen';
 import Swipe from '../screens/SwipeScreen';
+import { Pressable } from 'react-native';
 
-const BottomTab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
-export default function BottomTabNavigator() {
+export default function DrawerNavigator({navigation}) {
   return (
-    <BottomTab.Navigator initialRouteName="Home">
-      <BottomTab.Screen
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen
         name="Home"
         component={HomeNavigator}
         options={{
+          headerTitle: false.valueOf,
           tabBarIcon: ({color}) => <Ionicons name="ios-home" color={color} size={25} style={{marginBottom: -3}} />,
+          // headerLeft: () => (
+          //   <Pressable onPress={() => navigation.openDrawer()}>
+          //     <Entypo name="menu" size={24} color="black" />            
+          //   </Pressable>
+          // ),
         }}
       />
 
-      <BottomTab.Screen
+      <Drawer.Screen
         name="Friends"
         component={FriendsNavigator}
         options={{
           tabBarIcon: ({color}) => <MaterialIcons name="add-circle" color={color} size={25} style={{marginBottom: -3}} />,
         }}
       />
-    </BottomTab.Navigator>
+    </Drawer.Navigator>
   );
 }
 
@@ -41,16 +48,14 @@ function HomeNavigator() {
         name="Home"
         component={Home}
         options={{
-          headerShown: false,
-          animationEnabled: false
+          // headerShown: false,
         }}
       />
       <HomeStack.Screen
         name="Swipe"
         component={Swipe}
         options={{
-          headerShown: false,
-          animationEnabled: false
+          // headerShown: false,
         }}
       />
     </HomeStack.Navigator>
@@ -65,8 +70,7 @@ function FriendsNavigator() {
         name="Friends"
         component={Friends}
         options={{
-          headerShown: false,
-          animationEnabled: false
+          // headerShown: false,
         }}
       />
     </FriendsStack.Navigator>
